@@ -6,6 +6,8 @@ df$Sub_metering_1 = as.numeric(df$Sub_metering_1)
 df$Sub_metering_2 = as.numeric(df$Sub_metering_2)
 df$Sub_metering_3 = as.numeric(df$Sub_metering_3)
 
+png("plot3.png", width=480, height=480, res = 72)
+
 plot(df$DateTime, df$Sub_metering_1, type = 'S', 
      xlab = '', ylab = 'Energy sub metering')
 lines(df$DateTime, df$Sub_metering_2, type = 'S', col = 'red')
@@ -14,5 +16,4 @@ legend('topright', lty = 1, cex = 0.8,
        col = c('black', 'red', 'blue'), 
        legend = c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'))
 
-dev.copy(png, file = 'plot3.png')
 dev.off()

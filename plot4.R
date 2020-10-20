@@ -10,6 +10,7 @@ df$Sub_metering_1 = as.numeric(df$Sub_metering_1)
 df$Sub_metering_2 = as.numeric(df$Sub_metering_2)
 df$Sub_metering_3 = as.numeric(df$Sub_metering_3)
 
+png("plot4.png", width=480, height=480, res = 72)
 par(mfrow = c(2, 2), mar = c(4, 4, 2, 1), oma = c(0, 0, 2, 0))
 
 plot(df$DateTime, df$Global_active_power, type = 'S', 
@@ -28,5 +29,4 @@ legend('topright', lty = 1, cex = 0.8, bty = 'n',
 plot(df$DateTime, df$Global_reactive_power, type = 'S', 
      xlab = 'datetime', ylab = 'Global_reactive_power')
 
-dev.copy(png, file = 'plot4.png')
 dev.off()
